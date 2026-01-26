@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento - Lotes na Praia do Ceará</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script>
+        // Configurações
+        const phoneNumber = "5585996713309"; // Número corrigido
+        const message = "Olá, gostaria de saber mais informações sobre os lotes no Nova Vida Jericoacoara";
+        const redirectSeconds = 5;
+        const pageTitle = "Estamos selecionando um atendente de plantão para te ajudar";
+        
+        // Codificar mensagem para URL
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        
+        // Inicializar contador
+        let countdown = redirectSeconds;
+        
+        // Função para atualizar contador
+        function updateCountdown() {
+            document.getElementById('countdown').textContent = countdown;
+            countdown--;
+            
+            if (countdown < 0) {
+                window.location.href = whatsappURL;
+            }
+        }
+        
+        // Iniciar quando a página carregar
+        window.addEventListener('DOMContentLoaded', function() {
+            document.title = pageTitle;
+            document.getElementById('page-title').textContent = pageTitle;
+            
+            // Iniciar contador
+            setInterval(updateCountdown, 1000);
+            
+            // Redirecionamento automático após o tempo definido
+            setTimeout(function() {
+                window.location.href = whatsappURL;
+            }, redirectSeconds * 1000);
+            
+            // Botão para redirecionamento manual
+            document.getElementById('redirect-btn').addEventListener('click', function() {
+                window.location.href = whatsappURL;
+            });
+        });
+    </script>
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        
+        fbq('init', '1072129418117563');
+        fbq('track', 'PageView');
+        fbq('track', 'Lead');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" 
+             src="https://www.facebook.com/tr?id=1072129418117563&ev=PageView&noscript=1" 
+             alt="Pixel do Facebook" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    
+    <style>
+        /* Reset minimalista para melhor performance */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header {
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            color: #25D366;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h1 {
+            color: #128C7E;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .countdown-container {
+            margin: 30px 0;
+        }
+        
+        .countdown-label {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .countdown {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #128C7E;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        
+        .countdown-unit {
+            font-size: 1rem;
+            color: #888;
+        }
+        
+        .message-box {
+            background-color: #f0f9f7;
+            border-left: 4px solid #25D366;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: left;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .message-box p {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .phone-number {
+            font-weight: bold;
+            color: #128C7E;
+        }
+        
+        .redirect-btn {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+        
+        .redirect-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        .redirect-btn:active {
+            transform: translateY(0);
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .whatsapp-icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        
+        .loading-bar {
+            height: 4px;
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 2px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        
+        .loading-progress {
+            height: 100%;
+            width: 0;
+            background-color: #25D366;
+            border-radius: 2px;
+            animation: loading-animation 5s linear forwards;
+        }
+        
+        @keyframes loading-animation {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .countdown {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">📱</div>
+            <h1 id="page-title">Estamos selecionando um atendente de plantão para te ajudar</h1>
+        </div>
+        
+        <div class="countdown-container">
+            <div class="countdown-label">Você será redirecionado em:</div>
+            <div class="countdown" id="countdown">5</div>
+            <div class="countdown-unit">segundos</div>
+        </div>
+        
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+        
+        <div class="message-box">
+            <p><strong>Mensagem que será enviada:</strong></p>
+            <p>"Olá, gostaria de saber mais informações sobre os lotes no Nova Vida Jericoacoara"</p>
+            <p><strong>Para o número:</strong> <span class="phone-number">+55 (85) 99671-3309</span></p>
+        </div>
+        
+        <button class="redirect-btn" id="redirect-btn">
+            <span class="whatsapp-icon">💬</span>
+            Falar com atendente AGORA
+        </button>
+        
+        <div class="footer">
+            <p>Redirecionamento automático em <span id="dynamic-countdown">5</span> segundos</p>
+            <p>Se o redirecionamento não funcionar, clique no botão acima</p>
+        </div>
+    </div>
+    
+    <script>
+        // Atualizar contador no rodapé
+        setInterval(function() {
+            document.getElementById('dynamic-countdown').textContent = countdown > 0 ? countdown : 0;
+        }, 1000);
+    </script>
+</body>
+</html>
