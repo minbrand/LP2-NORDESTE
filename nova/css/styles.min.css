@@ -1,4 +1,4 @@
-﻿html,
+html,
 body,
 header,
 nav,
@@ -396,12 +396,16 @@ body::before {
     transition: all .5s ease
 }
 
-.navBar img.logotipo-ne {
+.navBar img.logotipo-ne,
+.navBar img.logotipo-ac,
+.navBar img.logotipo-st,
+.navBar img.logotipo-ji,
+.navBar img.logotipo-mb {
     max-width: 120px;
     aspect-ratio: 102/24
 }
 
-.navBar img.logotipo-opt {
+.navBar img.logotipo-er {
     max-width: 105px;
     aspect-ratio: 89/24
 }
