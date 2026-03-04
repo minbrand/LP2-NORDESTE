@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonathan Amorim – Curso Auxiliar de Corretor (Presencial)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome (ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f9f9f9;
+            color: #1e1e2f;
+            line-height: 1.5;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Seções */
+        section {
+            padding: 70px 0;
+        }
+
+        .bg-dark {
+            background: linear-gradient(135deg, #0b1c2f 0%, #1a3a5f 100%);
+            color: white;
+        }
+
+        .bg-light {
+            background-color: #ffffff;
+        }
+
+        .bg-gray {
+            background-color: #f4f7fc;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-block;
+            background-color: #f05a28;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 18px 45px;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(240, 90, 40, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: #d94a1c;
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(240, 90, 40, 0.6);
+        }
+
+        .btn i {
+            margin-right: 10px;
+        }
+
+        /* Cabeçalho / Hero */
+        .hero {
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+        }
+
+        .hero .highlight {
+            color: #f05a28;
+            border-bottom: 4px solid #f05a28;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .hero .subhead {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .hero .price-badge {
+            background: rgba(255,255,255,0.15);
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 60px;
+            margin: 30px 0 20px;
+            border: 2px dashed #f05a28;
+        }
+
+        .hero .price-badge .old-price {
+            font-size: 1.8rem;
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-right: 20px;
+        }
+
+        .hero .price-badge .new-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #f05a28;
+            background-color: white;
+            padding: 5px 25px;
+            border-radius: 50px;
+            margin-left: 10px;
+        }
+
+        .hero .info {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            background-color: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .hero .info i {
+            color: #f05a28;
+            margin-right: 8px;
+        }
+
+        /* Seção "O que você vai aprender" */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            width: 100px;
+            height: 5px;
+            background: #f05a28;
+            display: block;
+            margin: 15px auto 0;
+            border-radius: 5px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .benefit-item {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .benefit-item i {
+            font-size: 3.5rem;
+            color: #f05a28;
+            margin-bottom: 20px;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .benefit-item p {
+            color: #4a4a5a;
+        }
+
+        /* Prova social / depoimentos */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border-left: 5px solid #f05a28;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-card .author {
+            font-weight: 700;
+            color: #0b1c2f;
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-card .author i {
+            color: #f05a28;
+            margin-right: 10px;
+        }
+
+        /* Localização */
+        .address-box {
+            background: #0b1c2f;
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .address-box i {
+            font-size: 3rem;
+            color: #f05a28;
+            margin-bottom: 20px;
+        }
+
+        .address-box h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .address-box p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .address-box .map-link {
+            color: #f05a28;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px dotted;
+        }
+
+        /* Garantia / selos */
+        .trust-badge {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .trust-item {
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .trust-item i {
+            font-size: 2.5rem;
+            color: #f05a28;
+            margin-bottom: 10px;
+        }
+
+        /* CTA final */
+        .cta-final {
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-final .price-tag {
+            font-size: 2.2rem;
+            background: #1a3a5f;
+            display: inline-block;
+            padding: 15px 50px;
+            border-radius: 60px;
+            margin: 30px 0;
+            color: white;
+        }
+
+        .cta-final .small-text {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-top: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0b1c2f;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        footer .creci {
+            font-weight: 700;
+            color: #f05a28;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero .subhead {
+                font-size: 1.2rem;
+            }
+            .hero .price-badge .old-price {
+                font-size: 1.4rem;
+            }
+            .hero .price-badge .new-price {
+                font-size: 2.2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SEÇÃO HERO (APRESENTAÇÃO AGRESSIVA) -->
+    <section class="bg-dark hero">
+        <div class="container">
+            <h1>
+                CHEGA DE FICAR FORA DO MERCADO IMOBILIÁRIO! <br>
+                <span class="highlight">TORNE-SE AUXILIAR DE CORRETOR EM POUCAS SEMANAS</span>
+            </h1>
+            <p class="subhead">Curso 100% presencial em Fortaleza • Método comprovado • Certificado reconhecido</p>
+            
+            <!-- Preço com gatilho de desconto -->
+            <div class="price-badge">
+                <span class="old-price">DE R$ 997</span>
+                <span class="new-price">POR R$ 497</span>
+            </div>
+            
+            <p style="font-size: 1.3rem; margin: 15px 0 10px; font-weight: 700;">🚨 ÚLTIMAS 15 VAGAS PARA A TURMA PRESENCIAL! 🚨</p>
+            
+            <!-- Botão de compra WhatsApp -->
+            <a href="https://wa.me/5585997489242?text=Ol%C3%A1%20Jonathan%21%20Quero%20garantir%20minha%20vaga%20no%20curso%20Auxiliar%20de%20Corretor%20por%20R%24%20497." class="btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> GARANTIR MINHA VAGA AGORA
+            </a>
+            
+            <!-- Informações de credenciamento -->
+            <div class="info">
+                <i class="fas fa-id-card"></i> Jonathan Amorim • CRECI 28444F <br>
+                <i class="fas fa-graduation-cap"></i> Associado ABED (Associação Brasileira de Educação a Distância)
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO BENEFÍCIOS (DORES x SOLUÇÕES) -->
+    <section class="bg-light">
+        <div class="container">
+            <h2 class="section-title">POR QUE ESTE CURSO VAI MUDAR SUA VIDA?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3>ENTRE RÁPIDO NO MERCADO</h3>
+                    <p>O mercado imobiliário está aquecido e precisa de auxiliares qualificados. Em poucas semanas você estará pronto para atuar e ganhar comissões.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>SEM EXPERIÊNCIA? NÃO IMPORTA!</h3>
+                    <p>Nosso método prático ensina desde o zero: captação, atendimento, documentação e técnicas de fechamento. Você vai sair na frente.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-users"></i>
+                    <h3>AULAS PRESENCIAIS COM CORRETORES ATUANTES</h3>
+                    <p>Aprenda com quem vive o mercado. Turmas reduzidas para máximo aproveitamento e networking com profissionais da área.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-certificate"></i>
+                    <h3>CERTIFICADO E SUPORTE</h3>
+                    <p>Certificado de conclusão e auxílio na colocação profissional. Você não fica sozinho depois do curso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO PROVA SOCIAL (DEPOIMENTOS) -->
+    <section class="bg-gray">
+        <div class="container">
+            <h2 class="section-title">QUEM JÁ FEZ, APROVOU!</h2>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <p>"Fiz o curso sem saber nada de imóveis. Em um mês já estava ajudando um corretor e no segundo mês fiz minha primeira venda. Jonathan é um profissional incrível!"</p>
+                    <div class="author"><i class="fas fa-user-circle"></i> Camila Souza • Ex-aluna</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Vale cada centavo. A didática é direta, sem enrolação. O mercado de Fortaleza é quente e esse curso me deu a base que eu precisava para começar."</p>
+                    <div class="author"><i class="fas fa-user-circle"></i> Rafael Lima • Auxiliar de Corretor</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"O melhor investimento que fiz. Em 3 meses estava faturando mais que muito corretor formado. Recomendo de olhos fechados!"</p>
+                    <div class="author"><i class="fas fa-user-circle"></i> Patrícia Mendes • Ex-aluna</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO PRESENCIAL -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="address-box">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>ONDE ACONTECE O CURSO?</h3>
+                <p><i class="fas fa-location-dot"></i> Travessa Pará, 812 – Centro, Fortaleza – CE, 60025-100</p>
+                <p>🕒 Turmas presenciais: segundas e quartas, 19h às 22h | Sábados, 9h às 13h</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Travessa+Pará+812+Centro+Fortaleza+CE" target="_blank" class="map-link"><i class="fas fa-map"></i> Ver no mapa (clique aqui)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GATILHO ESCASSEZ / AUTORIDADE -->
+    <section class="bg-dark" style="padding: 50px 0;">
+        <div class="container">
+            <div class="trust-badge">
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <p>+ 200 ALUNOS FORMADOS</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-trophy"></i>
+                    <p>ABED – ASSOCIAÇÃO BRASILEIRA DE EDUCAÇÃO</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-clock"></i>
+                    <p>VAGAS LIMITADAS POR TURMA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION FINAL -->
+    <section class="bg-light cta-final">
+        <div class="container">
+            <h2>VOCÊ ESTÁ A UM PASSO DE INICIAR SUA CARREIRA</h2>
+            <p style="font-size: 1.3rem; max-width: 800px; margin: 20px auto;">Não perca mais tempo. Invista em você e comece a ganhar dinheiro no mercado imobiliário ainda este ano!</p>
+            
+            <div class="price-tag">
+                <span style="text-decoration: line-through; opacity: 0.6;">R$ 997</span> <span style="color: #f05a28; font-weight: 800;">R$ 497</span>
+            </div>
+            
+            <a href="https://wa.me/5585997489242?text=Ol%C3%A1%20Jonathan%21%20Quero%20garantir%20minha%20vaga%20no%20curso%20Auxiliar%20de%20Corretor%20por%20R%24%20497." class="btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> QUERO ME INSCREVER AGORA
+            </a>
+            
+            <p class="small-text"><i class="fas fa-lock"></i> Pagamento seguro • Vaga garantida somente após confirmação no WhatsApp</p>
+            <p class="small-text" style="margin-top: 5px;"><i class="fas fa-phone-alt"></i> Tire dúvidas: (85) 99748-9242 (Jonathan)</p>
+        </div>
+    </section>
+
+    <!-- RODAPÉ COM INFORMAÇÕES ADICIONAIS -->
+    <footer>
+        <div class="container">
+            <p><span class="creci">Jonathan Amorim • CRECI 28444F</span> | Corretor de Imóveis</p>
+            <p>Associado à ABED (Associação Brasileira de Educação a Distância) – Curso presencial com metodologia exclusiva</p>
+            <p>Travessa Pará, 812 - Centro, Fortaleza - CE, 60025-100</p>
+            <p style="margin-top: 20px; font-size: 0.8rem;">&copy; 2025 Jonathan Amorim. Todos os direitos reservados. | Vendas sujeitas a disponibilidade de vagas.</p>
+        </div>
+    </footer>
+
+    <!-- (opcional) pequeno script para rolagem suave, mas não necessário -->
+</body>
+</html>
